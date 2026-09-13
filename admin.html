@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="admin-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">My Wishlist</a>
+      <a class="admin-link" href="index.html">View Wishlist</a>
+    </nav>
+  </header>
+
+  <main class="container admin-page">
+    <section class="panel">
+      <p class="eyebrow">Developer page</p>
+      <h1>Wishlist Manager</h1>
+      <p>Add and edit the items shown on the public wishlist.</p>
+
+      <form id="item-form">
+        <input type="hidden" id="edit-id">
+
+        <label>Name
+          <input id="name" required maxlength="100" placeholder="Item name">
+        </label>
+
+        <label>Description
+          <textarea id="description" required maxlength="500" placeholder="Short description"></textarea>
+        </label>
+
+        <div class="two-col">
+          <label>Price
+            <input id="price" type="number" min="0" step="0.01" placeholder="0.00">
+          </label>
+          <label>Image URL
+            <input id="image" type="url" placeholder="https://...">
+          </label>
+        </div>
+
+        <label>Product URL
+          <input id="url" type="url" placeholder="https://...">
+        </label>
+
+        <div class="form-actions">
+          <button class="button primary" type="submit">Save Item</button>
+          <button class="button secondary hidden" id="cancel-edit" type="button">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Current Items</h2>
+          <p id="admin-count">0 items</p>
+        </div>
+        <button id="clear-all" class="button danger" type="button">Clear All</button>
+      </div>
+      <div id="admin-list"></div>
+    </section>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
